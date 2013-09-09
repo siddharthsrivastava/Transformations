@@ -454,29 +454,15 @@ void generateDemonstrationImagePerspective()
 }
 
 int main(int argc, char *argv[])
-{
-    //QCoreApplication a(argc, argv);
-    Mat a = imread("E://lena.jpg",1);
-    Mat d = rotateImage(a, 20);
-    Mat s;
-    //s = scaleImage(d, 1/2, 1/2);
-    //QDir dir("J:\iit\3rd sem\eel806_vision\project\dataset\reference");
+{    
     rescaleReferenceImages();
     generateRotatedImages();
     generateAffineImages();
     generatePerspectiveImages();
     generateScaledImages();
-    generateSimilarityImages();
-
-   // cv::namedWindow("Output");
-    //cv::imshow("Output", s);
-    //imwrite("rotatedImage.jpg", d);
-    //imwrite("rigidbodyimage.jpg",s);
-    //affineTransform(a);
-    //perspectiveTransform(a);
-   // affineTransform(a);
+    generateSimilarityImages();  
     cvWaitKey(0);
 
    return 0;
-    //return a.exec();
+
 }
