@@ -138,15 +138,15 @@ Mat perspectiveTransform(Mat src, float xDest[], float yDest[])
        warp_dst = Mat::zeros( src.rows, src.cols, src.type() );
 
        /// Set your 3 points to calculate the  Affine Transform
-//       srcTri[0] = Point2f( 0,0 );
-//       srcTri[1] = Point2f( src.cols - 1, 0 );
-//       srcTri[2] = Point2f( 0, src.rows - 1 );
-//       srcTri[3] = Point2f( src.cols -1 , src.rows - 1 );
-
        srcTri[0] = Point2f( 0,0 );
-       srcTri[1] = Point2f( (src.cols - 1)/2, 0 );
-       srcTri[2] = Point2f( src.cols-1,0 );
+       srcTri[1] = Point2f( src.cols - 1, 0 );
+       srcTri[2] = Point2f( 0, src.rows - 1 );
        srcTri[3] = Point2f( src.cols -1 , src.rows - 1 );
+
+//       srcTri[0] = Point2f( 0,0 );
+//       srcTri[1] = Point2f( (src.cols - 1)/2, 0 );
+//       srcTri[2] = Point2f( src.cols-1,0 );
+//       srcTri[3] = Point2f( src.cols -1 , src.rows - 1 );
 
 //       dstTri[0] = Point2f( src.cols*0.0, src.rows*0.33 );
 //       dstTri[1] = Point2f( src.cols*0.85, src.rows*0.25 );
@@ -460,9 +460,7 @@ int main(int argc, char *argv[])
     generateAffineImages();
     generatePerspectiveImages();
     generateScaledImages();
-    generateSimilarityImages();  
+    generateSimilarityImages();
     cvWaitKey(0);
-
-   return 0;
-
+    return 0;
 }
